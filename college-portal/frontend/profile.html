@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Profile | College Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CP</span>
+        <span class="brand-text">
+          <strong>College Portal</strong>
+          <small>Students Record Portal</small>
+        </span>
+      </a>
+      <button type="button" class="btn btn-ghost" id="back-btn">Back to list</button>
+    </div>
+  </header>
+
+  <main class="container page">
+    <!-- Loading -->
+    <div class="loading" id="profile-loader">
+      <span class="spinner" aria-hidden="true"></span>
+      <p>Loading profile...</p>
+    </div>
+
+    <!-- Not found -->
+    <div class="state state-error" id="not-found" hidden>
+      <div class="state-icon" aria-hidden="true">&#128533;</div>
+      <h2>Student not found</h2>
+      <p data-not-found-message>
+        The student record you are looking for does not exist or may have been deleted.
+      </p>
+      <a class="btn btn-primary" href="index.html">Back to list</a>
+    </div>
+
+    <!-- Profile card -->
+    <section class="card profile-card" id="profile-card" hidden>
+      <div class="profile-head">
+        <div class="avatar avatar-lg" id="avatar">?</div>
+        <div class="profile-head-text">
+          <h1 class="profile-name" id="profile-name">Student</h1>
+          <p class="profile-degree" id="profile-degree">—</p>
+          <span class="badge" id="profile-year">—</span>
+        </div>
+      </div>
+
+      <dl class="details">
+        <div class="detail">
+          <dt>Mobile</dt>
+          <dd id="profile-mobile">—</dd>
+        </div>
+        <div class="detail">
+          <dt>Email</dt>
+          <dd id="profile-email">—</dd>
+        </div>
+        <div class="detail">
+          <dt>Degree</dt>
+          <dd id="profile-degree-value">—</dd>
+        </div>
+        <div class="detail">
+          <dt>Record created</dt>
+          <dd id="profile-created">—</dd>
+        </div>
+      </dl>
+
+      <img id="profile-photo" class="profile-photo" alt="" hidden />
+
+      <div class="form-actions">
+        <a class="btn btn-primary" id="edit-btn" href="add.html">Edit Student</a>
+        <button type="button" class="btn btn-danger" id="delete-btn">Delete</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>College Students Record Portal &mdash; Node.js + Express + SQLite</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

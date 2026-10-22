@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Student | College Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127891;</text></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">CP</span>
+        <span class="brand-text">
+          <strong>College Portal</strong>
+          <small>Students Record Portal</small>
+        </span>
+      </a>
+      <a class="btn btn-ghost" href="index.html">Back to list</a>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="card card-narrow">
+      <div class="card-header">
+        <div>
+          <h1 class="card-title" id="form-title">Add Student</h1>
+          <p class="card-subtitle" id="form-subtitle">
+            Fill in the details to create a new student record.
+          </p>
+        </div>
+      </div>
+
+      <div class="loading" id="form-loader">
+        <span class="spinner" aria-hidden="true"></span>
+        <p>Loading student...</p>
+      </div>
+
+      <!-- API / validation banner -->
+      <div class="banner" id="form-banner" hidden role="alert"></div>
+
+      <form id="student-form" class="form" novalidate>
+        <div class="field">
+          <label for="name">Full Name <span class="required">*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="input"
+            placeholder="e.g. Aarav Sharma"
+            maxlength="100"
+            autocomplete="name"
+          />
+          <p class="error" id="error-name"></p>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="class_year">Class Year <span class="required">*</span></label>
+            <select id="class_year" name="class_year" class="input">
+              <option value="">Select year</option>
+            </select>
+            <p class="error" id="error-class_year"></p>
+          </div>
+
+          <div class="field">
+            <label for="degree">Degree <span class="required">*</span></label>
+            <select id="degree" name="degree" class="input">
+              <option value="">Select degree</option>
+            </select>
+            <p class="error" id="error-degree"></p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="mobile">Mobile Number <span class="required">*</span></label>
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              class="input"
+              placeholder="10 digits"
+              inputmode="numeric"
+              maxlength="10"
+              autocomplete="tel"
+            />
+            <p class="error" id="error-mobile"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="optional">(optional)</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="input"
+              placeholder="name@example.com"
+              maxlength="100"
+              autocomplete="email"
+            />
+            <p class="error" id="error-email"></p>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submit-btn">Add Student</button>
+          <button type="button" class="btn btn-ghost" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>College Students Record Portal &mdash; Node.js + Express + SQLite</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
